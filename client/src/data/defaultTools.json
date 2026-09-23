@@ -1,0 +1,16 @@
+[
+  {
+    "id": "tool_1",
+    "name": "Default Tool A",
+    "description": "A default tool for demonstration purposes.",
+    "enabled": true,
+    "category": "general"
+  },
+  {
+    "id": "tool_2",
+    "name": "Default Tool B",
+    "description": "Another default tool.",
+    "enabled": false,
+    "category": "advanced"
+  }
+]

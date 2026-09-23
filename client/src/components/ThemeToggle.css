@@ -1,0 +1,92 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   Floating Theme Toggle 
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.theme-toggle-floating {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #4F46E5;
+
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background 0.3s cubic-bezier(0.32, 0.72, 0, 1),
+    border-color 0.3s cubic-bezier(0.32, 0.72, 0, 1),
+    color 0.3s ease,
+    box-shadow 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.theme-toggle-floating:hover {
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.10),
+    0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle-floating:focus-visible {
+  outline: 2px solid #0071E3;
+  outline-offset: 3px;
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Dark Mode
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.dark .theme-toggle-floating {
+  background: rgba(28, 28, 30, 0.85);
+  border-color: rgba(255, 255, 255, 0.10);
+  color: #FBBF24;
+
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.30),
+    0 8px 24px rgba(0, 0, 0, 0.40);
+}
+
+body.dark .theme-toggle-floating:hover {
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.40),
+    0 12px 32px rgba(0, 0, 0, 0.50),
+    0 0 30px rgba(251, 191, 36, 0.15);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Mobile responsive
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .theme-toggle-floating {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}

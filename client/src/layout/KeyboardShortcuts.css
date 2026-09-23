@@ -1,0 +1,241 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   Keyboard Shortcuts 
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* Full-screen overlay — covers EVERYTHING including sidebar + navbar */
+.shortcuts-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 99999;
+
+  /* Flex centering — works on any screen size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Prevent any parent from affecting positioning */
+  margin: 0;
+  padding: 0;
+}
+
+/* Modal — centered by flex parent */
+.shortcuts-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 420px;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.12),
+    0 32px 64px rgba(15, 23, 42, 0.18);
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+
+.shortcuts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.shortcuts-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #6366f1;
+}
+
+.shortcuts-header-left h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: -0.2px;
+}
+
+.shortcuts-close {
+  border: none;
+  background: transparent;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.shortcuts-close:hover {
+  background: rgba(15, 23, 42, 0.06);
+  color: #0f172a;
+}
+
+/* ── Body ───────────────────────────────────────────────────────── */
+
+.shortcuts-body {
+  padding: 12px 20px;
+}
+
+.shortcuts-group {
+  margin-bottom: 16px;
+}
+
+.shortcuts-group:last-child {
+  margin-bottom: 8px;
+}
+
+.shortcuts-group-title {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 8px;
+}
+
+.shortcuts-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.shortcuts-label {
+  font-size: 13px;
+  color: #475569;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+}
+
+.shortcuts-keys {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.shortcuts-plus {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.shortcuts-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  color: #475569;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+  line-height: 1;
+}
+
+/* ── Footer ─────────────────────────────────────────────────────── */
+
+.shortcuts-footer {
+  padding: 12px 20px;
+  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  text-align: center;
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.shortcuts-footer kbd {
+  margin: 0 2px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.dark .shortcuts-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+body.dark .shortcuts-modal {
+  background: #131c2e;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 32px 64px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .shortcuts-header {
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+body.dark .shortcuts-header-left h3 {
+  color: #f8fafc;
+}
+
+body.dark .shortcuts-close {
+  color: #64748b;
+}
+
+body.dark .shortcuts-close:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+}
+
+body.dark .shortcuts-label {
+  color: #cbd5e1;
+}
+
+body.dark .shortcuts-kbd {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.10);
+  color: #94a3b8;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .shortcuts-footer {
+  border-top-color: rgba(255, 255, 255, 0.06);
+  color: #64748b;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   SCROLLBAR (for long shortcut lists)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.shortcuts-modal::-webkit-scrollbar {
+  width: 5px;
+}
+
+.shortcuts-modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.shortcuts-modal::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 999px;
+}
+
+body.dark .shortcuts-modal::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   REDUCED MOTION
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .shortcuts-overlay,
+  .shortcuts-modal {
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,1 @@
+"""TrustShare AI Assistant module."""

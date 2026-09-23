@@ -1,0 +1,70 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   Layout — Premium App Shell (Medium Size)
+   ══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  --sidebar-width: 260px;
+  --sidebar-collapsed-width: 76px;
+  --navbar-height: 60px;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: #f8fafc;
+  transition: background 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.main-area {
+  flex: 1;
+  margin-left: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 0;
+
+  will-change: margin-left;
+  transition: margin-left 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.main-area-collapsed {
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+@media (max-width: 1024px) {
+  .main-area,
+  .main-area-collapsed {
+    margin-left: 0;
+  }
+}
+
+/* ── Dark Mode ─────────────────────────────────────────────────────────── */
+
+body.dark .app-shell {
+  background: #0b1220;
+}
+
+body.dark .main-area {
+  background: transparent;
+}
+
+/* ── Reduced motion ────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .app-shell,
+  .main-area {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Smooth scroll globally ────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.app-shell,
+.main-area {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}

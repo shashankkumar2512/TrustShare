@@ -1,0 +1,515 @@
+/* ============================================================
+   TrustShare Settings Page Styles (Theme Aware - Strictly Compact)
+   ============================================================ */
+
+.settings-container {
+  max-width: 720px; /* Constrained strictly to match Figma/previous narrow width */
+  margin: 0 auto;
+  width: 100%;
+}
+
+.settings-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+/* ── Tab Navigation ────────────────────────────────────────── */
+.settings-tabs-wrapper {
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 24px;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.settings-tabs-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.settings-tabs {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+
+.settings-tab {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  padding: 12px 4px 16px 4px;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.settings-tab:hover {
+  color: var(--text-primary);
+}
+
+.settings-tab.active {
+  color: var(--blue-500);
+  border-bottom-color: var(--blue-500);
+}
+
+body.dark .settings-tab.active {
+  color: var(--blue-400);
+  border-bottom-color: var(--blue-400);
+}
+
+/* ── Card Styles ───────────────────────────────────────────── */
+.settings-card {
+  border-radius: 16px;
+  padding: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.settings-card:hover {
+  border-color: var(--border-medium);
+}
+
+.settings-card-header {
+  margin-bottom: 24px;
+}
+
+.settings-card-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.settings-card-subtitle {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+}
+
+/* ── Profile Details ───────────────────────────────────────── */
+.avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.avatar-preview-container {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--bg-input);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.avatar-preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-initials {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.avatar-helper-text {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ── Password Inputs ───────────────────────────────────────── */
+.password-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.password-input-wrapper input {
+  padding-right: 44px;
+}
+
+.password-visibility-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: color var(--transition);
+}
+
+.password-visibility-btn:hover {
+  color: var(--text-primary);
+}
+
+/* ── Sessions List ─────────────────────────────────────────── */
+.sessions-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sessions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.session-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.25s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.session-item:hover {
+  border-color: var(--border-medium);
+}
+
+.session-item.is-current {
+  border-color: rgba(16, 185, 129, 0.3);
+  background: rgba(16, 185, 129, 0.04);
+}
+
+body.dark .session-item.is-current {
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.session-info-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.session-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--blue-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+body.dark .session-icon-box {
+  color: var(--blue-400);
+  background: rgba(59, 130, 246, 0.15);
+}
+
+.session-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.session-device-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.session-device-name {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 13.5px;
+}
+
+.session-badge-current {
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--emerald-400);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.session-details {
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Notification Row Matrix ───────────────────────────────── */
+.notification-matrix {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.notification-matrix-header {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.notification-row {
+  display: grid;
+  grid-template-columns: 1fr 100px 100px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  align-items: center;
+  transition: background-color var(--transition);
+}
+
+.notification-row:last-child {
+  border-bottom: none;
+}
+
+.notification-row:hover {
+  background: var(--bg-hover);
+}
+
+.notification-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-right: 16px;
+}
+
+.notification-name {
+  font-weight: 700;
+  font-size: 13.5px;
+  color: var(--text-primary);
+}
+
+.notification-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.notification-toggle-cell {
+  display: flex;
+  justify-content: center;
+}
+
+/* ── Email Digest Frequency ────────────────────────────────── */
+.digest-section {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 24px;
+  margin-top: 8px;
+}
+
+.digest-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.digest-subtitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+/* ── Feedback States ───────────────────────────────────────── */
+.alert-feedback {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+.alert-success {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--emerald-400);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.alert-error {
+  background: rgba(244, 63, 94, 0.15);
+  color: var(--rose-400);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+}
+
+/* ── Buttons (Confined & Compact) ────────────────────────── */
+.settings-container .btn,
+.settings-container .my-files-btn {
+  width: fit-content; /* Strictly prevents buttons from stretching broad */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Responsiveness ────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .settings-card {
+    padding: 20px;
+  }
+  
+  .avatar-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .sessions-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .sessions-list-header .btn {
+    width: 100%;
+  }
+
+  .session-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .session-item .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .notification-matrix-header {
+    display: none;
+  }
+
+  .notification-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .notification-row:last-child {
+    border-bottom: none;
+  }
+
+  .notification-info {
+    padding-right: 0;
+  }
+
+  .notification-toggle-cell {
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  .notification-toggle-cell::before {
+    content: "In-App Notify:";
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .notification-toggle-cell:last-child::before {
+    content: "Email Notify:";
+  }
+  
+  .settings-container .btn,
+  .settings-container .my-files-btn {
+    width: 100%; /* Stacks on mobile viewports */
+  }
+}
+
+body:not(.dark) .form-input {
+    background: #fff;
+    border: 1px solid #D1D5DB;
+    color: #111827;
+}
+
+body:not(.dark) .form-input:focus {
+    border-color: #2563EB;
+    box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+body.dark .form-input {
+    background: #1E293B;
+    color: #fff;
+}
+
+body:not(.dark) .password-visibility-btn {
+    color: #6B7280;
+}
+
+body.dark .password-visibility-btn {
+    color: #94A3B8;
+}
+
+body:not(.dark) .btn-primary {
+    background: #2563EB;
+    color: #fff;
+}
+
+body:not(.dark) .btn-primary:hover {
+    background: #1D4ED8;
+}
+
+/* ── Session Timestamp Label ───────────────────────────────── */
+.session-time-label {
+  font-size: 11px;
+  font-weight: 600;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.session-item.is-current .session-time-label {
+  color: var(--emerald-400);
+}
+
+.session-item:not(.is-current) .session-time-label {
+  color: var(--text-muted);
+}
+
+/* ── Toggle Off State Fix for Dark Mode ────────────────────── */
+body.dark .settings-container button[style*="bg-hover"] {
+  box-shadow: inset 0 1px 3px rgba(255,255,255,0.08);
+}

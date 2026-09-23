@@ -1,0 +1,272 @@
+/* ============================================================
+   TrustShare — Notifications Timeline (Premium CSS Style)
+   ============================================================ */
+
+.notifications-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Custom Metric Box Accents ────────────────────────────── */
+.sharing-stat-icon.rose-icon {
+  background: rgba(244, 63, 94, 0.12);
+  color: var(--rose-400);
+}
+
+.notifications-toolbar-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 4px 0;
+}
+
+/* ── Notifications Timeline Cards ─────────────────────────── */
+.notifications-timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notif-timeline-item {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+  padding: 16px;
+  gap: 14px;
+}
+
+.notif-timeline-item:hover {
+  border-color: var(--border-medium);
+  transform: translateY(-1px);
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.04),
+    0 12px 32px rgba(0, 0, 0, 0.05);
+}
+
+body.dark .notif-timeline-item:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  border-color: rgba(96, 165, 250, 0.15);
+}
+
+/* Left Accent Borders per category category */
+.notif-timeline-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 3.5px;
+  background: transparent;
+  transition: background 0.2s ease;
+}
+
+.notif-timeline-item.is-unread .notif-timeline-accent {
+  background: var(--blue-500);
+}
+
+.notif-timeline-item.notif-row--security .notif-timeline-accent {
+  background: var(--rose-500);
+}
+
+.notif-timeline-item.notif-row--expiration .notif-timeline-accent {
+  background: var(--amber-500);
+}
+
+/* Icon Container */
+.notif-timeline-icon-container {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.notif-timeline-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Card Content Column */
+.notif-timeline-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+}
+
+.notif-timeline-header-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.notif-timeline-title {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.notif-timeline-time {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.notif-timeline-message {
+  font-size: 13.2px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.notif-timeline-footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.notif-timeline-category-tag {
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.notif-timeline-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12.2px;
+  font-weight: 600;
+  color: var(--blue-500);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.18s ease;
+}
+
+body.dark .notif-timeline-cta-btn {
+  color: var(--blue-400);
+}
+
+.notif-timeline-cta-btn:hover {
+  color: var(--blue-600);
+  transform: translateX(2px);
+}
+
+body.dark .notif-timeline-cta-btn:hover {
+  color: var(--blue-300);
+}
+
+/* Actions Column (Right Side) */
+.notif-timeline-actions-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.notif-timeline-unread-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue-500);
+  box-shadow: 0 0 8px var(--blue-500);
+  margin-top: 4px;
+}
+
+.notif-timeline-delete-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.2s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.notif-timeline-item:hover .notif-timeline-delete-btn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.notif-timeline-delete-btn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--rose-500);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+body.dark .notif-timeline-delete-btn:hover {
+  color: var(--rose-400);
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .notif-timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 14px;
+    gap: 10px;
+  }
+  .notif-timeline-accent {
+    width: 0;
+    height: 3px;
+    bottom: auto;
+    right: 0;
+  }
+  .notif-timeline-actions-column {
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 10px;
+    margin-top: 4px;
+  }
+  .notif-timeline-delete-btn {
+    opacity: 1;
+    transform: none;
+  }
+  .notif-timeline-header-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}

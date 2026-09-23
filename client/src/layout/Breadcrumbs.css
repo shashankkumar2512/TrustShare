@@ -1,0 +1,105 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   BREADCRUMBS — Premium navigation trail
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.breadcrumbs-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 6px;
+  border-radius: 6px;
+  color: #94a3b8;
+  transition: all 0.18s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.breadcrumbs-home:hover {
+  background: rgba(99, 102, 241, 0.08);
+  color: #6366f1;
+}
+
+.breadcrumbs-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumbs-separator {
+  color: #cbd5e1;
+  flex-shrink: 0;
+}
+
+.breadcrumbs-link {
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #64748b;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: -0.1px;
+  text-transform: capitalize;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.breadcrumbs-link:hover {
+  background: rgba(99, 102, 241, 0.08);
+  color: #6366f1;
+}
+
+.breadcrumbs-current {
+  padding: 4px 8px;
+  color: #0f172a;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  text-transform: capitalize;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   DARK MODE
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.dark .breadcrumbs {
+  color: #64748b;
+}
+
+body.dark .breadcrumbs-home,
+body.dark .breadcrumbs-link {
+  color: #94a3b8;
+}
+
+body.dark .breadcrumbs-home:hover,
+body.dark .breadcrumbs-link:hover {
+  background: rgba(99, 102, 241, 0.15);
+  color: #a5b4fc;
+}
+
+body.dark .breadcrumbs-separator {
+  color: #475569;
+}
+
+body.dark .breadcrumbs-current {
+  color: #f8fafc;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   REDUCED MOTION
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .breadcrumbs-item,
+  .breadcrumbs-link,
+  .breadcrumbs-home {
+    transition-duration: 0.01ms !important;
+    animation: none !important;
+  }
+}

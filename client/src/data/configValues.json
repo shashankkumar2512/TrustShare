@@ -1,0 +1,12 @@
+{
+  "appName": "React + FastAPI App",
+  "version": "1.0.0",
+  "defaultPageSize": 10,
+  "maxUploadSizeMB": 10,
+  "supportEmail": "support@example.com",
+  "features": {
+    "darkMode": true,
+    "analytics": true,
+    "notifications": false
+  }
+}

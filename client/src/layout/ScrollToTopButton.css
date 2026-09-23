@@ -1,0 +1,78 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   Floating Scroll-to-Top Button
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: #ffffff;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.15),
+    0 8px 24px rgba(99, 102, 241, 0.35);
+
+  will-change: transform;
+  transition: box-shadow 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.scroll-top-btn:hover {
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.20),
+    0 12px 32px rgba(99, 102, 241, 0.45);
+}
+
+.scroll-top-btn:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 3px;
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Dark Mode
+   ══════════════════════════════════════════════════════════════════════════ */
+
+body.dark .scroll-top-btn {
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.4),
+    0 8px 24px rgba(99, 102, 241, 0.40);
+}
+
+body.dark .scroll-top-btn:hover {
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.5),
+    0 12px 32px rgba(99, 102, 241, 0.55);
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Mobile
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 640px) {
+  .scroll-top-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top-btn {
+    transition-duration: 0.01ms !important;
+  }
+}

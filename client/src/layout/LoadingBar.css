@@ -1,0 +1,64 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   Loading Bar 
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9999;
+  background: transparent;
+  pointer-events: none;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #6366f1, #8b5cf6);
+  border-radius: 0 999px 999px 0;
+  box-shadow:
+    0 0 8px rgba(99, 102, 241, 0.5),
+    0 0 20px rgba(99, 102, 241, 0.3);
+  position: relative;
+}
+
+/* Glowing tip */
+.loading-bar-fill::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -2px;
+  width: 80px;
+  height: 7px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(99, 102, 241, 0.6)
+  );
+  border-radius: 999px;
+  transform: rotate(1deg);
+}
+
+/* Dark mode */
+body.dark .loading-bar-fill {
+  background: linear-gradient(90deg, #60a5fa, #818cf8, #a78bfa);
+  box-shadow:
+    0 0 8px rgba(129, 140, 248, 0.6),
+    0 0 20px rgba(129, 140, 248, 0.3);
+}
+
+body.dark .loading-bar-fill::after {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(129, 140, 248, 0.7)
+  );
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .loading-bar-fill {
+    transition-duration: 0.01ms !important;
+  }
+}
